@@ -1,39 +1,65 @@
-# Impact-of-Noisy-Labels-using-Supervised-Learning
+#  Impact of Noisy Labels using Supervised Learning
 
-Understanding the Impact of Noisy Labels on Supervised Learning
-A machine learning project focused on evaluating how label noise affects model accuracy and robustness. This project compares multiple classification algorithms on the SMS Spam dataset under increasing levels of label corruption (10% to 50%) and visualizes performance degradation.
+Understanding how noisy (incorrect) labels affect the performance of supervised learning models. This project experiments with multiple machine learning algorithms on the **SMS Spam Collection Dataset**, injecting varying levels of label noise (10% to 50%) and observing performance degradation.
 
-📊 Dataset
-Source: SMS Spam Collection Dataset (https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)
-Attributes: Label (ham/spam), SMS Text
+---
 
-🎯 Objectives
+## 📂 Dataset
 
-Train and Compare ML Models: Logistic Regression, Support Vector Machine (SVM), Random Forest
+**Source**: [SMS Spam Collection Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)  
+**Attributes**:  
+- `label`: spam / ham  
+- `text`: SMS message content
 
-Label Noise Injection: Flip labels randomly to simulate mislabeled data
+---
 
-Performance Analysis: Track model accuracy, precision, recall, and F1 score with increasing noise
+## 🎯 Objectives
 
-Visualization: Graph model performance as noise increases
+- 🧠 Train & Evaluate Multiple ML Models  
+- 🔀 Simulate Label Noise by Randomly Flipping True Labels  
+- 📉 Track Impact on Accuracy, Precision, Recall, and F1-Score  
+- 📊 Visualize Performance Degradation as Noise Increases  
 
-🤖 Algorithms Used
+---
 
-Logistic Regression
-Support Vector Machine (LinearSVC)
-Random Forest
+## 🤖 Algorithms Used
 
-📈 Results (Sample - May Vary by Run)
-Noise Level	Logistic Regression	SVM	Random Forest
-0%	97.10% ✅	96.93%	97.05%
-10%	94.75%	94.40%	95.01%
-30%	91.20%	89.88%	93.02%
-50%	86.30%	83.15%	88.64% ❗
-✅ Most Robust Model: Random Forest
-📉 Most Sensitive to Noise: SVM
+- Logistic Regression  
+- Support Vector Machine (Linear SVC)  
+- Random Forest Classifier  
 
-🔍 Observations
+---
 
-Model robustness decreases with increasing label noise.
-Random Forest handled noise more gracefully than linear models.
-Emphasizes the importance of label quality in real-world machine learning tasks.
+## 📈 Results Snapshot
+
+| 🔁 Noise Level | Logistic Regression | SVM | Random Forest |
+|---------------|---------------------|-----|----------------|
+| 0% (No Noise) | ✅ 97.10%            | 96.93% | 🥇 97.05%     |
+| 10%           | 94.75%              | 94.40% | 95.01%        |
+| 30%           | 91.20%              | 89.88% | 93.02%        |
+| 50%           | 86.30%              | ⚠️ 83.15% | ✅ 88.64%    |
+
+- ✅ **Best Model (Most Robust)**: Random Forest  
+- ⚠️ **Most Sensitive to Noise**: SVM  
+
+---
+
+## 🧠 Key Observations
+
+- Model performance drops consistently with increasing label noise.
+- Random Forest was most robust, handling noise better than linear models.
+- SVM’s performance declined sharply with noisy data.
+- Highlights the critical importance of **clean, reliable data** in real-world ML applications.
+
+---
+
+## 🛠️ Tools & Libraries
+
+- Python  
+- Scikit-learn  
+- Pandas, NumPy  
+- Matplotlib, Seaborn  
+- Tqdm (for progress bars)
+
+---
+
